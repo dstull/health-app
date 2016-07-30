@@ -1,0 +1,2 @@
+json.extract! member, :id, :last_name, :first_name, :middle_initial, :id_number, :date_of_birth, :gender, :home_number, :cell_number, :address, :alternate_address, :date_of_enrollment, :date_of_disenrollment, :line_of_business, :primary_language, :interpreter_needed, :ethnicity, :marital_status, :created_at, :updated_at
+json.url member_url(member, format: :json)

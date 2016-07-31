@@ -4,15 +4,15 @@ class CreateMembers < ActiveRecord::Migration[5.0]
       t.string :last_name
       t.string :first_name
       t.string :middle_initial
-      t.integer :id_number
-      t.datetime :date_of_birth
+      t.string :id_number
+      t.date :date_of_birth
       t.boolean :gender
       t.string :home_number
       t.string :cell_number
       t.string :address
       t.string :alternate_address
-      t.datetime :date_of_enrollment
-      t.datetime :date_of_disenrollment
+      t.date :date_of_enrollment
+      t.date :date_of_disenrollment
       t.string :line_of_business
       t.string :primary_language
       t.boolean :interpreter_needed

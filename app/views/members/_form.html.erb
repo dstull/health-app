@@ -1,11 +1,31 @@
-<%= simple_form_for member, html: { class: 'form-horizontal col-md-6' },wrapper: :horizontal_form  do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :last_name %>
-  <%= f.input :first_name, label: 'First Name' %>
-  <%= f.input :middle_initial %>
-  <%= f.input :id_number %>
-  <%= f.input :date_of_birth %>
-    <%= f.input :gender,:collection => [[true, 'M'], [false, 'F']], 
+<%= simple_form_for member, html: { class: 'form-horizontal col-md-6' }, wrapper: :horizontal_form do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :last_name %>
+    <%= f.input :first_name, label: 'First Name' %>
+    <%= f.input :middle_initial %>
+    <%= f.input :id_number %>
+    <%= f.input :date_of_birth %>
+    <div class="form-group row">
+      <%= f.label :gender,class: 'col-sm-3 col-form-label' %>
+      <div class="col-sm-9">
+        <div class="checkbox">
+          <input type="hidden" name="member[gender]" value="">
+          <span class="radio inline">
+            <label for="member_gender_true" class="form-check-inline">
+              <input class="radio_buttons optional form-check-input" type="radio" value="true" checked="checked" name="member[gender]" id="member_gender_true">
+              M
+            </label>
+        </span>
+          <span class="radio inline">
+            <label for="member_gender_false" class="form-check-inline">
+              <input class="radio_buttons optional form-check-input" readonly="readonly" type="radio" value="false" name="member[gender]" id="member_gender_false">
+              F
+            </label>
+        </span>
+        </div>
+      </div>
+    </div>
+    <%#= f.input :gender,:collection => [[true, 'M'], [false, 'F']],
           :label_method => :last, 
           :value_method => :first,
           :as => :radio_buttons, 
@@ -19,8 +39,28 @@
     <%= f.input :date_of_disenrollment %>
     <%= f.input :line_of_business %>
     <%= f.input :primary_language %>
-    <%= f.input :interpreter_needed %>
+    <%#= f.input :interpreter_needed %>
+    <div class="form-group row">
+      <%= f.label :interpreter_needed,class: 'col-sm-3 col-form-label' %>
+      <div class="col-sm-9">
+        <div class="checkbox">
+          <input type="hidden" name="member[interpreter_needed]" value="">
+          <span class="radio inline">
+            <label for="member_interpreter_needed_true" class="form-check-inline">
+              <input class="radio_buttons optional form-check-input" type="radio" value="true" checked="checked" name="member[interpreter_needed]" id="member_interpreter_needed_true">
+              Yes
+            </label>
+        </span>
+          <span class="radio inline">
+            <label for="member_interpreter_needed_false" class="form-check-inline">
+              <input class="radio_buttons optional form-check-input" readonly="readonly" type="radio" value="false" name="member[interpreter_needed]" id="member_interpreter_needed_false">
+              No
+            </label>
+        </span>
+        </div>
+      </div>
+    </div>
     <%= f.input :ethnicity %>
-    <%= f.input :marital_status %>
-  <%= f.button :submit %>
+    <%= f.input :marital_status, collection: [ "Married", "Single", "Divorced", "Widowed"] %>
+    <%= f.button :submit %>
 <% end %>

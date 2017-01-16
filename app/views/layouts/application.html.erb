@@ -22,7 +22,7 @@
       <% if user_signed_in? %>
           <li>
             <a class="dropdown-button" href="#!" data-activates="dropdown1">
-              <%= current_user.try(:email) %>
+              <%= current_user.email %>
               <i class="material-icons right">arrow_drop_down</i>
             </a>
           </li>
@@ -36,18 +36,20 @@
 </nav>
 <div class="row">
   <div class="col s12">
-    <ul id="slide-out" class="side-nav">
-      <li>
-        <div class="userView">
-          <a href="#!email"><span class="email"><%= current_user.email %></span></a>
-        </div>
-      </li>
-      <li>
-        <%= link_to '<i class="material-icons">people</i>Members'.html_safe, members_path %>
-      <li>
-        <%= link_to '<i class="material-icons">contact_phone</i>Call Logs'.html_safe, call_logs_path %>
-      </li>
-    </ul>
+    <% if user_signed_in? %>
+        <ul id="slide-out" class="side-nav">
+          <li>
+            <div class="userView">
+              <a href="#!email"><span class="email"><%= current_user.email %></span></a>
+            </div>
+          </li>
+          <li>
+            <%= link_to '<i class="material-icons">people</i>Members'.html_safe, members_path %>
+          <li>
+            <%= link_to '<i class="material-icons">contact_phone</i>Call Logs'.html_safe, call_logs_path %>
+          </li>
+        </ul>
+    <% end %>
     <% if notice %>
         <div class="row">
           <div class="col s12">

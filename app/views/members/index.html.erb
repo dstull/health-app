@@ -1,34 +1,29 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Members</h1>
 
-<div class="table-responsive">
-  <table class="table table-hover">
-    <thead class="thead-default">
-    <tr>
-      <th>Last name</th>
-      <th>First name</th>
-      <th>Middle initial</th>
-      <th>Id number</th>
-      <th colspan="2"></th>
-    </tr>
-    </thead>
+<table class="highlight">
+  <thead>
+  <tr>
+    <th>Last name</th>
+    <th>First name</th>
+    <th>Middle initial</th>
+    <th>Id number</th>
+    <th colspan="2"></th>
+  </tr>
+  </thead>
 
-    <tbody>
-    <% @members.each do |member| %>
-        <tr>
-          <td><%= member.last_name %></td>
-          <td><%= member.first_name %></td>
-          <td><%= member.middle_initial %></td>
-          <td><%= link_to member.id_number, member %></td>
-          <td><%= link_to 'Edit', edit_member_path(member) %></td>
-          <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-    <% end %>
-    </tbody>
-  </table>
-</div>
-
+  <tbody>
+  <% @members.each do |member| %>
+      <tr>
+        <td><%= member.last_name %></td>
+        <td><%= member.first_name %></td>
+        <td><%= member.middle_initial %></td>
+        <td><%= link_to member.id_number, member %></td>
+        <td><%= link_to 'Edit', edit_member_path(member) %></td>
+        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
 <br>
 
 <%= link_to 'New Member', new_member_path %>

@@ -52,7 +52,7 @@ SimpleForm.setup do |config|
   end
 
   # The default wrapper to be used by the FormBuilder.
-  config.default_wrapper = :default
+  config.default_wrapper = :materialize_form
 
   # Define the way to render check boxes / radio buttons with labels.
   # Defaults to :nested for bootstrap config.
@@ -61,7 +61,8 @@ SimpleForm.setup do |config|
   config.boolean_style = :nested
 
   # Default class for buttons
-  config.button_class = 'btn'
+  #config.button_class = 'btn'
+  config.button_class = 'btn waves-effect waves-light'
 
   # Method used to tidy up errors. Specify any Rails Array method.
   # :first lists the first message for each field.

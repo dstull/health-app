@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0'
+gem 'rails', '5.0.1'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -30,10 +30,18 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "therubyracer"
-gem 'bootstrap', '~> 4.0.0.alpha3.1'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
+gem 'bootstrap', '~> 4.0.0.alpha5'
 gem "font-awesome-rails"
+gem 'materialize-sass'
+gem 'material_icons'
+
 gem 'simple_form'
 gem 'pry-rails'
+gem 'rails_admin', '~> 1.0'
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

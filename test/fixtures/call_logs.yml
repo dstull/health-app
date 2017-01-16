@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comments: MyText
+  member: one
+  time_of_call: 2017-01-02 12:43:57
+  user: one
+  result_of_call: MyString
+  pcp_provider_call: MyString
+
+two:
+  comments: MyText
+  member: two
+  time_of_call: 2017-01-02 12:43:57
+  user: two
+  result_of_call: MyString
+  pcp_provider_call: MyString

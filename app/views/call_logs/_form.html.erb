@@ -1,0 +1,20 @@
+<%= simple_form_for @call_log, html: { class: 'col s6' } do |f| %>
+    <%= f.error_notification %>
+
+    <%= f.association :member, label_method: :display_name, include_blank: 'Please Select...' %>
+    <%= f.label :date_of_call %>
+    <%= f.text_field :date_of_call, class: 'datepicker' %>
+    <div class="row">
+      <div class="input-field">
+        <%= f.time_select :time_of_call, { time_separator: '', value: Time.now }, class: 'col s2' %>
+        <%= f.label :time_of_call %>
+      </div>
+    </div>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.input :result_of_call, collection: result_of_call_selections %>
+    <%= f.input :pcp_provider_call, collection: pcp_call_selections %>
+    <%= f.input :comments, input_html: { class: 'materialize-textarea' } %>
+
+    <%= f.button :submit %>
+    <%= link_to 'Back', call_logs_path, class: 'btn' %>
+<% end %>

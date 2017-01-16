@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  care_gap: one
+  doctor: one
+  date_of_completion: 2017-01-01
+
+two:
+  care_gap: two
+  doctor: two
+  date_of_completion: 2017-01-01

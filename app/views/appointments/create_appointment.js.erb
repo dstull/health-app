@@ -1,0 +1,6 @@
+<% if @appointment.errors.any? %>
+  $('#form_errors').html('<h2>some errors</h2>');
+<% else %>
+  $('#form_errors').empty();
+  $('.appointment_fields').html("<%= j render partial: 'appointments/appointment', collection: @new_appointments %>");
+<% end %>

@@ -16,4 +16,5 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require materialize-sprockets
+//= require cocoon
 //= require_tree .

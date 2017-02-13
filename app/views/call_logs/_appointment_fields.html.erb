@@ -1,0 +1,21 @@
+<li class="nested-fields">
+  <div class="collapsible-header">
+    <span class="badge">
+    <%= link_to_remove_association "<i class='material-icons'>clear</i>".html_safe, f,
+                                   { class: 'waves-effect waves-light' } %>
+    </span>
+    <span><i class="material-icons">event_note</i></span>
+    appt 1
+  </div>
+  <div class="collapsible-body">
+    <%= f.association :doctor, label_method: :display_name, value_method: :id, include_blank: 'Please Select...', wrapper_html: { class: 'm6 s12' } %>
+    <div class="row">
+      <div class="input-field">
+        <%= f.label :date_of_visit %>
+        <%= f.text_field :date_of_visit, class: 'datepicker' %>
+      </div>
+    </div>
+    <%= f.label :transportation_required %>
+    <%= f.collection_radio_buttons :transportation_required, [[true, 'Yes'], [false, 'No']], :first, :last %>
+  </div>
+</li>

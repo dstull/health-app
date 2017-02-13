@@ -7,3 +7,8 @@
 $primary-color: color("indigo", "lighten-2") !default;
 $secondary-color: color("indigo", "base") !default;
 @import "materialize";
+
+.collapsible-body {
+  margin-left: 5px;
+  margin-right: 5px;
+}

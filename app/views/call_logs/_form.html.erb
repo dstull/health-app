@@ -1,7 +1,7 @@
 <%= simple_form_for @call_log, html: { class: 'col s6' } do |f| %>
     <%= f.error_notification %>
 
-    <%= f.association :member, label_method: :display_name, include_blank: 'Please Select...' %>
+    <%= f.association :member, label_method: :display_name, value_method: :id, include_blank: 'Please Select...' %>
     <%= f.label :date_of_call %>
     <%= f.text_field :date_of_call, class: 'datepicker' %>
     <div class="row">
@@ -13,8 +13,40 @@
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.input :result_of_call, collection: result_of_call_selections %>
     <%= f.input :pcp_provider_call, collection: pcp_call_selections %>
+
+    <!-- Modal Trigger -->
+    <ul class="collapsible" data-collapsible="accordion">
+      <%= f.simple_fields_for :appointments do |appt| %>
+          <%= render 'appointment_fields', f: appt %>
+      <% end %>
+    </ul>
+
+    <div class="links">
+      <%= link_to_add_association 'add appointment', f,
+                                  :appointments,
+                                  { 'data-association-insertion-node' => "ul.collapsible",
+                                    'data-association-insertion-method' => "append",
+                                    'data-turbolinks' =>"false",
+                                    class: 'waves-effect waves-light btn' } %>
+    </div>
+
     <%= f.input :comments, input_html: { class: 'materialize-textarea' } %>
 
     <%= f.button :submit %>
     <%= link_to 'Back', call_logs_path, class: 'btn' %>
 <% end %>
+
+<div id="appt_modal" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4>Appointment</h4>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= text_field :appointment, :date_of_visit, class: 'datepicker' %>
+        <%= label :appointment, 'Date of Visit' %>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <%= link_to "Create Appointment", '#!', class: 'modal-action modal-close waves-effect waves-green btn create_appointment' %>
+  </div>
+</div>

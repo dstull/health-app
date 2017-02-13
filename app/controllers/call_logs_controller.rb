@@ -62,13 +62,25 @@ class CallLogsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_call_log
-      @call_log = CallLog.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_call_log
+    @call_log = CallLog.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def call_log_params
-      params.require(:call_log).permit(:comments, :member_id, :time_of_call, :user_id, :result_of_call, :pcp_provider_call)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def call_log_params
+    params.require(:call_log).permit(:comments,
+                                     :member_id,
+                                     :time_of_call,
+                                     :user_id,
+                                     :result_of_call,
+                                     :pcp_provider_call,
+                                     appointments_attributes:
+                                         [:id,
+                                          :member_id,
+                                          :doctor_id,
+                                          :date_of_visit,
+                                          :transportation_required,
+                                          :_destroy])
+  end
 end

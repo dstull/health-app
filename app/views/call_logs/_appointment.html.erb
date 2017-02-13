@@ -1,0 +1,8 @@
+<div class="modal-content">
+  <h4>Add Appointment</h4>
+  <%= f.input :member_id, input_html: { value: f.object.member_id } %>
+  <%= f.text_field :date_of_visit, class: 'datepicker' %>
+</div>
+<div class="modal-footer">
+  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+</div>

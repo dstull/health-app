@@ -1,8 +1,13 @@
 // Custom bootstrap variables must be set or imported before bootstrap itself.
 /*
 *= require_tree .
+*= require font_awesome5_webfont
 *= require_self
 */
+
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+//@import "bootstrap";
+
 @import "materialize/components/color";
 $primary-color: color("indigo", "lighten-2") !default;
 $secondary-color: color("indigo", "base") !default;

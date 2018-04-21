@@ -1,4 +1,4 @@
-$(document).on 'ready turbolinks:load cocoon:after-insert', ->
+$(document).on 'turbolinks:load cocoon:after-insert', ->
   $('select').material_select()
   $('.datepicker').pickadate
     selectMonths: true

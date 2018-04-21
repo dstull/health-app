@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.0.1'
+gem 'rails', '~> 5.2'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -33,10 +33,11 @@ gem "therubyracer"
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
-gem 'bootstrap', '~> 4.0.0.alpha5'
-gem "font-awesome-rails"
+gem 'bootstrap', '~> 4.1.0'
 gem 'materialize-sass'
 gem 'material_icons'
+gem 'webpacker', '~> 3.4'
+gem 'font_awesome5_rails'
 
 gem 'simple_form'
 gem 'pry-rails'
